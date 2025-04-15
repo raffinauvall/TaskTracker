@@ -1,0 +1,14 @@
+version: 2
+updates:
+  - package-ecosystem: "go"
+    directory: "/" # Ubah kalau go.mod kamu bukan di root
+    schedule:
+      interval: "daily" # Bisa juga "weekly" atau "monthly"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore(deps)"
+      include: "scope"
+    rebase-strategy: "auto"
+    ignore:
+      - dependency-name: "golang.org/x/tools"
+        versions: ["0.1.0"] # Contoh kalau mau nge-ignore versi tertentu
